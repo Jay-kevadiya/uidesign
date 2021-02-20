@@ -20,11 +20,18 @@ export default Cart = () => {
                 <View style={styles.listWrapper}>
                     <View style={styles.imageTextWrapper}>
                         <View style={styles.imageTag}>
-                            <Image  />
+                            <Image style={{height:100,width:50}} source={require('../assets/image/product1.jpg')}/>
                         </View>
                         <View style={styles.textTag}>
-
+                            <Text style={styles.plantText}>Plant Vases</Text>
+                            <Text style={styles.plantText}>$63.98</Text>
                         </View>
+                    </View>
+
+                    <View style={styles.buttonWrapper}>
+                    <Icon name="add-circle-outline" size={30}  />
+                    <Text>2</Text>
+                        <Icon name="remove-circle-outline" size={30}  />
                     </View>
                 </View>
             </View>
@@ -35,7 +42,7 @@ export default Cart = () => {
 const styles = StyleSheet.create({
     container:{
         flex:1,
-        padding:15
+        margin:10,
     },
     shoppingWrapper:{
         flexDirection:'row',
@@ -46,6 +53,7 @@ const styles = StyleSheet.create({
     },
     textWrapper:{
         marginLeft:25,
+        paddingBottom:20
     },
     shopText:{
         fontFamily:'Rubik-Bold',
@@ -62,15 +70,24 @@ const styles = StyleSheet.create({
         backgroundColor:'#fff'
     },
     listWrapper:{
-    
+    flexDirection:'row',
+    justifyContent: 'space-between',
     },
     imageTextWrapper:{
-
+        flexDirection:'row'
     },
     imageTag:{
-
+        marginLeft:10
     },
 textTag:{
+    marginLeft:30
+},
+plantText:{
+    color:'#009db0',
+    fontSize:17,
+    fontFamily:'Roboto-Medium'
+},
+buttonWrapper:{
 
 }
 
