@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { View, Text, StyleSheet,TouchableOpacity, Image} from 'react-native';
+
 
 export default Search = (props) => {
     return(
@@ -9,7 +10,7 @@ export default Search = (props) => {
                         <Image style={styles.searchImage} source={require('../assets/icon/search1.png')} />
                         <Text style={styles.searchText}>Search</Text>
 
-                        <TouchableOpacity onPress={() => props.navigation.navigate('RightSlider')}>
+                        <TouchableOpacity onPress={props.onPressFilterButton}>
                         <View style={styles.imageWrapper}>
                             <Image style={styles.menuImage} source={require('../assets/icon/setting.png')} />
                         </View>

@@ -29,7 +29,7 @@ export default ProductScreen = (props) => {
         } else if (productType === 1) {
             return <Detail />
         } else if (productType === 2) {
-            return <Review test={item} />
+            return <Review {...props} />
         }
 
 

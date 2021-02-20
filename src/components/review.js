@@ -1,21 +1,19 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet,} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import ReviewContain from '../components/reviewcontain';
 
-
 export default Review = (props) => {
+
 
     return (
         <View style={styles.container}>
+                <View style={styles.descWrapper}>
+                    <Icon style={styles.descIcon} name="documents-outline" size={30} color="black" />
+                    <Text style={styles.descText}>Product Reviews</Text>
+                </View>
 
-            <View style={styles.descWrapper}>
-                <Icon style={styles.descIcon} name="documents-outline" size={30} color="black" />
-                <Text style={styles.descText}>Product Reviews</Text>
-            </View>
-
-            <ReviewContain  {...props} />
-
+                <ReviewContain />
         </View>
     )
 };
@@ -44,8 +42,8 @@ const styles = StyleSheet.create({
         paddingVertical: 20
 
     },
-    reviewspace:{
-        marginVertical:15
+    reviewspace: {
+        marginVertical: 15
 
     }
 });

@@ -1,80 +1,101 @@
-import React from 'react';
-import { View, Text, StyleSheet, Image , TouchableOpacity} from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, Image, TouchableOpacity, FlatList } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { ColorData, SizeData } from '../common/data';
 
 
 export default Product = (props) => {
-    const {test} = props;
+    const { test } = props;
+
+    const [colorselect, SetColor] = useState('1');
+    const [sizeselect, SetSize] = useState('1');
+
+    
+
+    const renderColor = ({ item }) => {
+        return (
+            <TouchableOpacity onPress={() => SetColor(item.id)}>
+                <Text style={colorselect === item.id ?  {...styles.colorActive, backgroundColor: item.color } : {...styles.colorStyle, backgroundColor: item.color}}></Text>
+            </TouchableOpacity>
+        )
+    };
+
+    const renderSize = ({ item }) => {
+        return (
+            <TouchableOpacity onPress={() => SetSize(item.id)}>
+                <View style={ sizeselect === item.id ? styles.sizeActive : styles.sizeType}>
+                <Text>{item.name}</Text>
+
+                </View>
+            </TouchableOpacity>
+        )
+    };
     return (
         <View style={styles.productContainer}>
-        {/* text list */}
+            {/* text list */}
 
-        <View style={styles.productborderOne}>
-            <View style={styles.productTextWrapper}>
-                <View style={styles.productTextstyle}>
-                    <Text style={styles.text}>{test.name}</Text>
+            <View style={styles.productborderOne}>
+                <View style={styles.productTextWrapper}>
+                    <View style={styles.productTextstyle}>
+                        <Text style={styles.text}>{test.name}</Text>
+                    </View>
+
+                    <View style={styles.productRating}>
+                        <Text style={styles.pText}>{test.rating}</Text>
+                        <Icon name="star" size={20} color="gold" style={{ marginLeft: 5 }} />
+                    </View>
                 </View>
 
-                <View style={styles.productRating}>
-                    <Text style={styles.pText}>{test.rating}</Text>
-                    <Icon name="star" size={20} color="gold" style={{ marginLeft: 5 }} />
+                <View style={styles.priceWrapper}>
+                    <View style={styles.price}>
+                        <Text style={styles.priceText}>$ {test.price}</Text>
+                        <Text style={styles.mrpText}>$ {test.mrp}</Text>
+                    </View>
+                    <View style={styles.productSales}>
+                        <Text style={styles.sales}>{test.sales} Sales</Text>
+                    </View>
+                </View>
+
+
+            </View>
+
+            <View style={styles.productborderTwo}>
+                <View style={styles.selectColor}>
+                    <Text style={styles.selectText}>Select Color</Text>
+                    <Text style={styles.clearallText}>Clear All</Text>
+                </View>
+
+                <View style={styles.colors}>
+                    <FlatList
+
+                        data={ColorData}
+                        renderItem={renderColor}
+                        horizontal={true}
+                        keyExtractor={item => item.id}
+                    />
+
                 </View>
             </View>
 
-            <View style={styles.priceWrapper}>
-                <View style={styles.price}>
-                    <Text style={styles.priceText}>$ {test.price}</Text>
-                    <Text style={styles.mrpText}>$ {test.mrp}</Text>
+            <View style={styles.productborderThree}>
+                <View style={styles.selectColor}>
+                    <Text style={styles.selectText}>Select Color</Text>
+                    <Text style={styles.clearallText}>Clear All</Text>
                 </View>
-                <View style={styles.productSales}>
-                    <Text style={styles.sales}>{test.sales} Sales</Text>
+
+                <View style={styles.colors}>
+                    <FlatList
+
+                        data={SizeData}
+                        renderItem={renderSize}
+                        horizontal={true}
+                        keyExtractor={item => item.id}
+
+                    />
+
                 </View>
-            </View>
-
-
-        </View>
-
-        <View style={styles.productborderTwo}>
-            <View style={styles.selectColor}>
-                <Text style={styles.selectText}>Select Color</Text>
-                <Text style={styles.clearallText}>Clear All</Text>
-            </View>
-
-            <View style={styles.colors}>
-                <TouchableOpacity style={styles.colorsTypeOne}></TouchableOpacity>
-                <TouchableOpacity style={styles.colorsTypeTwo}></TouchableOpacity>
-                <TouchableOpacity style={styles.colorsTypeThree}></TouchableOpacity>
-                <TouchableOpacity style={styles.colorsTypeFour}></TouchableOpacity>
-
-            </View>
-        </View>
-
-        <View style={styles.productborderThree}>
-            <View style={styles.selectColor}>
-                <Text style={styles.selectText}>Select Color</Text>
-                <Text style={styles.clearallText}>Clear All</Text>
-            </View>
-
-            <View style={styles.colors}>
-                <TouchableOpacity style={styles.sizeTypeOne}>
-                    <Text style={styles.sizeText}>L</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.sizeTypeTwo}>
-                    <Text style={styles.sizeText}>X</Text>
-
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.sizeTypeThree}>
-                    <Text style={styles.sizeText}>M</Text>
-
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.sizeTypeFour}>
-                    <Text style={styles.sizeText}>XXL</Text>
-
-                </TouchableOpacity>
-
             </View>
         </View>
-    </View>
     )
 };
 
@@ -163,35 +184,7 @@ const styles = StyleSheet.create({
     },
     colors: {
         flexDirection: 'row',
-        alignItems: 'center',
         paddingVertical: 10,
-    },
-    colorsTypeOne: {
-        backgroundColor: 'rgb(105,241,175)',
-        height: 35,
-        width: 35,
-        borderRadius: 30
-    },
-    colorsTypeTwo: {
-        backgroundColor: 'rgb(65,133,247)',
-        height: 35,
-        width: 35,
-        borderRadius: 30,
-        marginLeft: 5,
-    },
-    colorsTypeThree: {
-        backgroundColor: 'rgb(95,127,141)',
-        height: 35,
-        width: 35,
-        borderRadius: 30,
-        marginLeft: 5
-    },
-    colorsTypeFour: {
-        backgroundColor: 'rgb(123,76,254)',
-        height: 40,
-        width: 40,
-        borderRadius: 30,
-        marginLeft: 5,
     },
     productborderThree: {
         backgroundColor: 'white',
@@ -200,47 +193,40 @@ const styles = StyleSheet.create({
         marginBottom: 10
 
     },
-    sizeTypeOne: {
+    sizeActive:{
+        borderColor:'#009db0',
+        borderWidth:4,
         alignItems: 'center',
         justifyContent: 'center',
         borderWidth: 2,
-        borderColor: 'rgb(65,133,247)',
-        borderRadius: 10,
-        height: 35,
-        width: 35
-
-    },
-    sizeTypeTwo: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderWidth: 2,
-        borderColor: 'rgb(65,133,247)',
         borderRadius: 10,
         height: 35,
         width: 35,
-        marginLeft: 5
-
+        marginRight:10
     },
-    sizeTypeThree: {
+    sizeType: {
         alignItems: 'center',
         justifyContent: 'center',
-        borderWidth: 2,
-        borderColor: 'rgb(65,133,247)',
+        borderWidth: 1,
+        borderColor: '#009db0',
         borderRadius: 10,
         height: 35,
         width: 35,
-        marginLeft: 5
-
+        marginRight:10
 
     },
-    sizeTypeFour: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderWidth: 2,
-        borderColor: 'rgb(65,133,247)',
-        borderRadius: 10,
-        height: 35,
-        width: 35,
-        marginLeft: 5
+    colorActive:{
+        borderColor:'#009db0',
+        borderWidth:3,
+        height: 35, 
+        width: 35, 
+        borderRadius: 20, 
+        marginRight: 5 
     },
+    colorStyle:{
+        height: 35, 
+        width: 35, 
+        borderRadius: 20, 
+        marginRight: 5 
+    }
 });

@@ -19,7 +19,7 @@ export default HomeHeader = (props) => {
 
                 <View style={styles.cartWrapper}>
 
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => props.navigation.navigate('Cart')}>
                         <Image style={styles.cartImage} source={require('../assets/icon/trolley.png')} />
                     </TouchableOpacity>
 

@@ -24,6 +24,43 @@ export const productImages = [
   require('../assets/image/productBanner5.png'),
 ];
 
+export const ColorData = [
+  {
+    id: '1',
+    color: 'rgb(105,241,175)'
+  },
+  {
+    id: '2',
+    color: 'rgb(65,133,247)'
+  },
+  {
+    id: '3',
+    color: 'rgb(95,127,141)'
+  },
+  {
+    id: '4',
+    color: 'rgb(123,76,254)'
+  },
+];
+
+export const SizeData = [
+  {
+    id:'1',
+    name: 'L' 
+  },
+  {
+    id:'2',
+    name: 'X' 
+  },
+  {
+    id:'3',
+    name: 'XL' 
+  },
+  {
+    id:'4',
+    name: 'XXL' 
+  },
+];
 
 export const flashSaleData = [
   {
