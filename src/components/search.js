@@ -16,6 +16,10 @@ export default Search = (props) => {
                         </TouchableOpacity>
                     </View>
                 </View>
+
+                <View>
+                    <Text>jay</Text>
+                </View>
             </TouchableOpacity>
     )
 };
