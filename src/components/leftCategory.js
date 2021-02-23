@@ -19,15 +19,14 @@ export default LeftCategory = (props) => {
                                 <Text style={styles.manText}>{item.CategoryName}</Text>
                             </ImageBackground>
                         </View>
-
                         <View style={styles.rightWrapper}>
                             <View style={styles.itemWrapper}>
                                 <View style={styles.itemStyle}>
                                     <TouchableOpacity onPress={() => alert('sh')}>
-                                        <Text style={styles.textdecor}>sh</Text>
+                                        <Text style={styles.textdecor}>{item.SubCategory[1].label}</Text>
                                     </TouchableOpacity>
                                     <TouchableOpacity onPress={() => alert('Sweater')}>
-                                        <Text style={styles.textdecor}>Sweater</Text>
+                                        <Text style={styles.textdecor}>{item.SubCategory[2].label}</Text>
                                     </TouchableOpacity>
                                 </View>
                             </View>
