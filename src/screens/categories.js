@@ -3,19 +3,17 @@ import { View, Text, StyleSheet, ScrollView, Image, ImageBackground, TouchableOp
 import HomeHeader from '../components/homeHeader';
 import Search from '../components/search';
 import LeftCategory from '../components/leftCategory';
-import RightCategory from '../components/rightCategory';
+
 
 export default Categories = (props) => {
     return (
         <View style={styles.container}>
             <HomeHeader {...props} name="Categories" />
             <ScrollView>
-                <Search {...props}/>
+                <Search {...props} />
 
-                <LeftCategory text="Man" imagedata={require('../assets/image/man-shoe.png')} item={"jay", "meet"}/>
-                <RightCategory text="WoMan" imagedata={require('../assets/image/woman-shoe.png')}/>
-                <LeftCategory text="Car" imagedata={require('../assets/image/car.png')}/>
-                <RightCategory text="Furniture" imagedata={require('../assets/image/sofa.png')}/>
+                <LeftCategory />
+
             </ScrollView>
 
 

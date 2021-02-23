@@ -24,7 +24,7 @@ export default Detail = () => {
                 <Text style={styles.descText}>Related Products</Text>
             </View>
 
-            <FlashList/>
+            <FlashList titlename="Products"/>
             
         </View>
     )

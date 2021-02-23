@@ -2,7 +2,7 @@ export const CategoryData = [
   {
     id: '1',
     CategoryName: 'Man',
-    logo: require('../src/assets/image/man-shoe.png'),
+    logo: require('../assets/image/man-shoe.png'),
     SubCategory: [
       {id: 1, label: 'Sh'},
       {id: 2, label: 'Shirt'},
@@ -21,7 +21,7 @@ export const CategoryData = [
   {
     id: '2',
     CategoryName: 'Woman',
-    logo: require('../src/assets/image/woman-shoe.png'),
+    logo: require('../assets/image/woman-shoe.png'),
     SubCategory: [
       {id: 1, label: 'T-Shirt'},
       {id: 2, label: 'Shirt'},
@@ -47,7 +47,7 @@ export const CategoryData = [
   {
     id: '3',
     CategoryName: 'Car',
-    logo: require('../src/assets/image/car.png'),
+    logo: require('../assets/image/car.png'),
     SubCategory: [
       {id: 1, label: 'Sh'},
       {id: 2, label: 'Shirt'},
@@ -66,7 +66,7 @@ export const CategoryData = [
   {
     id: '4',
     CategoryName: 'Furniture',
-    logo: require('../src/assets/image/sofa.png'),
+    logo: require('../assets/image/sofa.png'),
     SubCategory: [
       {id: 1, label: 'Sh'},
       {id: 2, label: 'Shirt'},

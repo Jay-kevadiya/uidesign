@@ -1,15 +1,22 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, Image, ImageBackground, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Image, ImageBackground, TouchableOpacity, FlatList } from 'react-native';
+import { CategoryData } from '../common/Category';
 
 
 export default LeftCategory = (props) => {
-    return (
-        <View style={styles.catContainer}>
-                    <View style={styles.leftWrapper}>
-                        <View style={styles.imageTag}>
-                            <ImageBackground style={{ height: 150, width: 170, flexDirection: 'column', alignItems: 'center', resizeMode: 'cover'}} source={require('../assets/image/back.jpg')}>
-                                <Image style={styles.shoeStyle} source={props.imagedata} />
-                                <Text style={styles.manText}>{props.text}</Text>
+
+    const renderLeftList = ({ item }) => {
+        const id = item.id;
+        return (
+
+            <View style={styles.leftWrapper} key={item.id}>
+
+                { id % 2 === 1 ?
+                    <>
+                        <View style={styles.imageTag} >
+                            <ImageBackground style={{ height: 150, width: 170, flexDirection: 'column', alignItems: 'center', resizeMode: 'cover' }} source={require('../assets/image/back.jpg')}>
+                                <Image style={styles.shoeStyle} source={item.logo} />
+                                <Text style={styles.manText}>{item.CategoryName}</Text>
                             </ImageBackground>
                         </View>
 
@@ -22,24 +29,49 @@ export default LeftCategory = (props) => {
                                     <TouchableOpacity onPress={() => alert('Sweater')}>
                                         <Text style={styles.textdecor}>Sweater</Text>
                                     </TouchableOpacity>
-
                                 </View>
                             </View>
+                        </View>
+                    </>
+
+                    :
+                    <>
+                        <View style={styles.rightWrapper}>
                             <View style={styles.itemWrapper}>
                                 <View style={styles.itemStyle}>
                                     <TouchableOpacity onPress={() => alert('sh')}>
-                                        <Text style={styles.textdecor}>Jacket</Text>
+                                        <Text style={styles.textdecor}>sh</Text>
                                     </TouchableOpacity>
                                     <TouchableOpacity onPress={() => alert('Sweater')}>
-                                        <Text style={styles.textdecor}>Socks</Text>
+                                        <Text style={styles.textdecor}>Sweater</Text>
                                     </TouchableOpacity>
 
                                 </View>
                             </View>
-                            
                         </View>
-                    </View>
-                </View>
+
+                        <View style={styles.imageTag}>
+                            <ImageBackground style={{ height: 150, width: 170, flexDirection: 'column', alignItems: 'center', resizeMode: 'cover' }} source={require('../assets/image/back.jpg')}>
+                                <Image style={styles.shoeStyle} source={item.logo} />
+                                <Text style={styles.manText}>{item.CategoryName}</Text>
+                            </ImageBackground>
+                        </View>
+
+                    </>
+
+                }
+
+            </View>
+        )
+    };
+    return (
+        <View style={styles.catContainer}>
+            <FlatList
+                data={CategoryData}
+                keyExtractor={item => item.id}
+                renderItem={renderLeftList}
+            />
+        </View>
     )
 };
 

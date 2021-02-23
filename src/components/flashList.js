@@ -5,7 +5,7 @@ import { flashSaleData } from '../common/data';
 import { useNavigation } from '@react-navigation/native';
 
 
-export default FlashList = ({route}) => {
+export default FlashList = (props) => {
 
     const navigation = useNavigation();
 
@@ -48,7 +48,7 @@ export default FlashList = ({route}) => {
             <View style={styles.flashWrapper}>
                 <View style={styles.iconWrapper}>
                     <Icon name="megaphone-outline" size={25} color="rgb(96,144,161)" />
-                    <Text style={styles.textStyle}>Flash Sales</Text>
+                    <Text style={styles.textStyle}>{props.titlename}</Text>
                 </View>
             </View>
 

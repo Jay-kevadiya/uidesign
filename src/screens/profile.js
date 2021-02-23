@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
             height: 2
         },
         shadowOpacity: 0.05,
-        elevation: 2,
+        elevation: 5,
         flexDirection: 'row',
         justifyContent: 'space-evenly',
         borderRadius: 10
@@ -181,7 +181,7 @@ const styles = StyleSheet.create({
             height: 2
         },
         shadowOpacity: 0.05,
-        elevation: 2,
+        elevation: 5,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
@@ -220,7 +220,7 @@ const styles = StyleSheet.create({
             height: 2
         },
         shadowOpacity: 0.05,
-        elevation: 2,
+        elevation: 5,
         borderRadius: 10
 
 
@@ -259,7 +259,7 @@ const styles = StyleSheet.create({
             height: 2
         },
         shadowOpacity: 0.05,
-        elevation: 2,
+        elevation: 5,
         borderRadius: 10,
         marginBottom:20,
         paddingVertical:10
