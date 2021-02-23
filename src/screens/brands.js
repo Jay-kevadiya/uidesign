@@ -9,7 +9,7 @@ export default Brands = (props) => {
         <View style={styles.container}>
             <HomeHeader {...props} name="Brands" />
 
-                <Search {...props}/>
+                <Search {...props} onPressFilterButton={() => props.navigation.navigate('RightSlider')}/>
                 
                 <BrandItem {...props}/>
 

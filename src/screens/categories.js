@@ -10,7 +10,7 @@ export default Categories = (props) => {
         <View style={styles.container}>
             <HomeHeader {...props} name="Categories" />
             <ScrollView>
-                <Search {...props} />
+                <Search {...props} onPressFilterButton={() => props.navigation.navigate('RightSlider')} />
 
                 <LeftCategory />
 
