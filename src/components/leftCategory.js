@@ -103,6 +103,7 @@ const styles = StyleSheet.create({
     },
     leftWrapper: {
         flexDirection: 'row',
+        paddingVertical:10
 
     },
     imageTag: {
