@@ -36,7 +36,6 @@ const styles = StyleSheet.create({
         paddingVertical:15
     },
     imageStyle: {
-        // height:
         alignSelf: 'center',
         marginLeft: '25%',
         tintColor:'white'

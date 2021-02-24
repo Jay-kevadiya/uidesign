@@ -17,6 +17,7 @@ import RightSlider from '../components/rightSlider';
 import Cart from '../screens/cart';
 import CheckOut from '../screens/checkOut';
 import Notifications from '../screens/notifications';
+import MyOrders from '../screens/myOrders';
 
 
 
@@ -48,6 +49,7 @@ const StackNav = () => {
       <Stack.Screen name="Cart" component={Cart} />
       <Stack.Screen name="CheckOut" component={CheckOut}/>
       <Stack.Screen name="Notifications" component={Notifications}/>
+      <Stack.Screen name="MyOrders" component={MyOrders}/>
 
       
     </Stack.Navigator>

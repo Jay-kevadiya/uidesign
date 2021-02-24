@@ -22,7 +22,7 @@ export default DrawerSectionTwo = (props) => {
                     </View>
                 </TouchableOpacity>
 
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => props.navigation.navigate('MyOrders')}>
                     <View style={styles.homeWrapper}>
                         <Icon name="briefcase-outline" size={25} color="rgb(14,87,97)" />
                         <Text style={styles.homeText}>My Orders</Text>
