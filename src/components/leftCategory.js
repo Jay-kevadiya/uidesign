@@ -22,11 +22,25 @@ export default LeftCategory = (props) => {
                         <View style={styles.rightWrapper}>
                             <View style={styles.itemWrapper}>
                                 <View style={styles.itemStyle}>
-                                    <TouchableOpacity onPress={() => alert('sh')}>
+                                    <TouchableOpacity onPress={() => alert(item.SubCategory[1].label)}>
                                         <Text style={styles.textdecor}>{item.SubCategory[1].label}</Text>
                                     </TouchableOpacity>
-                                    <TouchableOpacity onPress={() => alert('Sweater')}>
+                                    <TouchableOpacity onPress={() => alert(item.SubCategory[2].label)}>
                                         <Text style={styles.textdecor}>{item.SubCategory[2].label}</Text>
+                                    </TouchableOpacity>
+
+                                    {/* {item.SubCategory.map(sub => (
+                                        <TouchableOpacity onPress={() => alert(sub.label)}>
+                                        <Text style={styles.textdecor}>{sub.label}</Text>
+                                    </TouchableOpacity>
+                                    ))} */}
+                                </View>
+                                <View style={styles.itemStyle}>
+                                    <TouchableOpacity onPress={() => alert(item.SubCategory[3].label)}>
+                                        <Text style={styles.textdecor}>{item.SubCategory[3].label}</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity onPress={() => alert(item.SubCategory[4].label)}>
+                                        <Text style={styles.textdecor}>{item.SubCategory[4].label}</Text>
                                     </TouchableOpacity>
                                 </View>
                             </View>
@@ -38,11 +52,20 @@ export default LeftCategory = (props) => {
                         <View style={styles.rightWrapper}>
                             <View style={styles.itemWrapper}>
                                 <View style={styles.itemStyle}>
-                                    <TouchableOpacity onPress={() => alert('sh')}>
-                                        <Text style={styles.textdecor}>sh</Text>
+                                    <TouchableOpacity onPress={() => alert(item.SubCategory[5].label)}>
+                                        <Text style={styles.textdecor}>{item.SubCategory[5].label}</Text>
                                     </TouchableOpacity>
-                                    <TouchableOpacity onPress={() => alert('Sweater')}>
-                                        <Text style={styles.textdecor}>Sweater</Text>
+                                    <TouchableOpacity onPress={() => alert(item.SubCategory[6].label)}>
+                                        <Text style={styles.textdecor}>{item.SubCategory[6].label}</Text>
+                                    </TouchableOpacity>
+
+                                </View>
+                                <View style={styles.itemStyle}>
+                                    <TouchableOpacity onPress={() => alert(item.SubCategory[7].label)}>
+                                        <Text style={styles.textdecor}>{item.SubCategory[7].label}</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity onPress={() => alert(item.SubCategory[8].label)}>
+                                        <Text style={styles.textdecor}>{item.SubCategory[8].label}</Text>
                                     </TouchableOpacity>
 
                                 </View>
@@ -83,7 +106,7 @@ const styles = StyleSheet.create({
 
     },
     imageTag: {
-        backgroundColor: 'pink',
+        // backgroundColor: 'pink',
     },
     shoeStyle: {
         height: 50,

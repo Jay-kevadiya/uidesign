@@ -6,33 +6,17 @@ import Review from '../components/review';
 import Product from '../components/product';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Slider from '../components/slider';
+import MenuTabs from '../components/menuTabs';
 
 
 export default ProductScreen = (props) => {
 
     const { item } = props.route.params;
 
-
-
-
-    const [productType, SetProductType] = useState(0);
     const [count, setCount] = useState(0);
 
     const onminus = () => {
         count < 1 ? 0 : setCount(count - 1)
-    };
-
-    const viewItems = () => {
-        if (productType === 0) {
-            return <Product test={item}/>
-
-        } else if (productType === 1) {
-            return <Detail />
-        } else if (productType === 2) {
-            return <Review {...props} />
-        }
-
-
     };
 
 
@@ -50,31 +34,8 @@ export default ProductScreen = (props) => {
 
                 </View>
                 {/* list */}
-                <View style={styles.listWrapper}>
-                    <View style={styles.productWrapper}>
-                        <TouchableOpacity onPress={() => SetProductType(0)}>
-                            <Text style={[styles.textStyle, { backgroundColor:  productType === 0 ? '#009DB0' : '#fff', color: productType === 0 ? '#fff' : '#009DB0', borderColor:'#009DB0', borderWidth:1}]}>Product</Text>
-                        </TouchableOpacity>
-                    </View>
-                    <View style={styles.detailsWrapper}>
-                        <TouchableOpacity onPress={() => SetProductType(1)}>
-                            <Text style={[styles.textStyle, { backgroundColor: productType === 1 ? '#009DB0' : '#fff', color: productType === 1 ? '#fff' : '#009DB0',borderColor:'#009DB0', borderWidth:1}]}>Details</Text>
-                        </TouchableOpacity>
-                    </View>
-                    <View style={styles.reviewWrapper}>
-                        <TouchableOpacity onPress={() => SetProductType(2)}>
-                            <Text style={[styles.textStyle, { backgroundColor: productType === 2 ? '#009DB0' : '#fff', color: productType === 2 ? '#fff' : '#009DB0', borderColor:'#009DB0', borderWidth:1}]}>Review</Text>
-                        </TouchableOpacity>
-                    </View>
-                </View>
-
-                {/* <View style={{ height: 50 }}>{viewItems()}</View> */}
-
-                <ScrollView>
-                    <View style={styles.viewContent}>
-                        <View>{viewItems()}</View>
-                    </View>
-                </ScrollView>
+                
+                <MenuTabs {...props} title1="Product" title2="Detail" title3="Review" Tag1= {<Product test={item}/>} Tag2={<Detail />} Tag3={<Review {...props} />} />
 
             </View>
             {/* button bottom view */}
@@ -137,18 +98,6 @@ const styles = StyleSheet.create({
     imageSlider: {
         height: '100%',
         width: "100%"
-    },
-    listWrapper: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-around',
-        marginTop: 20,
-    },
-    textStyle: {
-        fontFamily: 'Roboto-Bold',
-        padding: 10,
-        paddingHorizontal: 25,
-        borderRadius: 20
     },
     productContainer: {
         flex: 1,

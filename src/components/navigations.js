@@ -16,6 +16,7 @@ import BrandListItem from '../components/brandListItem';
 import RightSlider from '../components/rightSlider';
 import Cart from '../screens/cart';
 import CheckOut from '../screens/checkOut';
+import Notifications from '../screens/notifications';
 
 
 
@@ -46,6 +47,7 @@ const StackNav = () => {
       <Stack.Screen name="RightSlider" component={RightSlider} options={{headerShown:false}}/>
       <Stack.Screen name="Cart" component={Cart} />
       <Stack.Screen name="CheckOut" component={CheckOut}/>
+      <Stack.Screen name="Notifications" component={Notifications}/>
 
       
     </Stack.Navigator>

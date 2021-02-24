@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import CartData from '../common/CartData';
 export default Cart = (props) => {
 
-    const cartRenderItems = ({item}) => {
+    const cartRenderItems = ({ item }) => {
         return (
             <View style={styles.listContainer}>
                 <View style={styles.listWrapper}>
@@ -46,11 +46,13 @@ export default Cart = (props) => {
 
             {/* List Wrapper */}
 
-            <FlatList
-                data={CartData}
-                keyExtractor={item => item.id}
-                renderItem={cartRenderItems}
-            />
+            
+                <FlatList
+                    data={CartData}
+                    keyExtractor={item => item.id}
+                    renderItem={cartRenderItems}
+                />
+            
 
             <View style={styles.bottomWrapper}>
                 <View style={styles.subtotalWrapper}>
@@ -109,7 +111,8 @@ const styles = StyleSheet.create({
     },
     listContainer: {
         backgroundColor: '#fff',
-        paddingVertical: 10
+        paddingVertical: 10,
+        marginVertical:10
     },
     listWrapper: {
         flexDirection: 'row',
@@ -134,7 +137,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
     },
     bottomWrapper: {
-        paddingVertical:10
+        paddingVertical: 10
     },
     subtotalWrapper: {
         flexDirection: 'row',
@@ -165,12 +168,12 @@ const styles = StyleSheet.create({
     checkText: {
         fontFamily: 'Roboto-Medium',
         fontSize: 18,
-        color:'white'
+        color: 'white'
     },
     textprice: {
         fontFamily: 'Roboto-Medium',
         fontSize: 18,
-        color:'white'
+        color: 'white'
 
     }
 

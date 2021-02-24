@@ -9,22 +9,6 @@ import HomeBrand from '../components/homeBarnd';
 
 export default BrandListItem = (props) => {
     const item = props.route.params;
-
-    const [productType, SetProductType] = useState(0);
-    const onPressProductType = (type) => { SetProductType(type) };
-
-    const viewItems = () => {
-        if (productType === 0) {
-            return <HomeBrand test={item.item}/>;
-
-        } else if (productType === 1) {
-            return <Details/>
-        } else if (productType === 2) {
-            return <Review/>
-        }
-
-
-    };
     return (
         <View style={styles.container}>
             <View style={styles.imageWrapper}>
@@ -33,28 +17,7 @@ export default BrandListItem = (props) => {
                 </TouchableOpacity>
                 <Image style={styles.imageStyle} source={item.item.logo} />
             </View>
-
-            <View style={styles.listWrapper}>
-                <View style={styles.productWrapper}>
-                    <TouchableOpacity onPress={() => onPressProductType(0)}>
-                        <Text style={[styles.textStyle, { backgroundColor: productType === 0 ? '#009DB0' : '#fff', color: productType === 0 ? '#fff' : '#009DB0',borderColor:'#009DB0', borderWidth:1 }]}>Home</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={styles.detailsWrapper}>
-                    <TouchableOpacity onPress={() => onPressProductType(1)}>
-                        <Text style={[styles.textStyle,  {backgroundColor: productType === 1 ? '#009DB0' : '#fff', color: productType === 1 ? '#fff' : '#009DB0',borderColor:'#009DB0', borderWidth:1 }]}>Details</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={styles.reviewWrapper}>
-                    <TouchableOpacity onPress={() => onPressProductType(2)}>
-                        <Text style={[styles.textStyle, {  backgroundColor: productType === 2 ? '#009DB0' : '#fff', color: productType === 2 ? '#fff' : '#009DB0',borderColor:'#009DB0', borderWidth:1 }]}>Review</Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
-
-            <ScrollView>
-                <View>{viewItems()}</View>
-            </ScrollView>
+            <MenuTabs {...props} title1="Home" title2="Detail" title3="Review" Tag1= {<HomeBrand test={item.item}/>} Tag2={<Detail />} Tag3={<Review {...props} />} />
 
         </View>
     )
