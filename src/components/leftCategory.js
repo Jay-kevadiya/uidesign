@@ -14,7 +14,7 @@ export default LeftCategory = (props) => {
                 { id % 2 === 1 ?
                     <>
                         <View style={styles.imageTag} >
-                            <ImageBackground style={{ height: 150, width: 170, flexDirection: 'column', alignItems: 'center', resizeMode: 'cover' }} source={require('../assets/image/back.jpg')}>
+                            <ImageBackground style={{ height: 150, width: 170, flexDirection: 'column', alignItems: 'center', resizeMode: 'cover'}} source={require('../assets/image/back.jpg')}>
                                 <Image style={styles.shoeStyle} source={item.logo} />
                                 <Text style={styles.manText}>{item.CategoryName}</Text>
                             </ImageBackground>
@@ -86,6 +86,7 @@ const styles = StyleSheet.create({
     },
     imageTag: {
         // backgroundColor: 'pink',
+       
     },
     shoeStyle: {
         height: 50,
@@ -101,11 +102,11 @@ const styles = StyleSheet.create({
     },
     rightWrapper: {
         backgroundColor: 'white',
-        width: 195
+        width: 195,
     },
     itemWrapper: {
         backgroundColor: 'white',
-        width: '90%'
+        marginHorizontal:10
 
     },
     itemStyle: {
@@ -122,4 +123,5 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         padding: 5,
     }
+
 });
