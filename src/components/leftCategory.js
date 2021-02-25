@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, Image, ImageBackground, TouchableOpacity, FlatList } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Image, ImageBackground, TouchableOpacity, FlatList, ToastAndroid } from 'react-native';
 import { CategoryData } from '../common/Category';
 
 
@@ -14,7 +14,7 @@ export default LeftCategory = (props) => {
                 { id % 2 === 1 ?
                     <>
                         <View style={styles.imageTag} >
-                            <ImageBackground style={{ height: 150, width: 170, flexDirection: 'column', alignItems: 'center', resizeMode: 'cover'}} source={require('../assets/image/back.jpg')}>
+                            <ImageBackground style={{ height: 150, width: 170, flexDirection: 'column', alignItems: 'center', resizeMode: 'cover' }} source={require('../assets/image/back.jpg')}>
                                 <Image style={styles.shoeStyle} source={item.logo} />
                                 <Text style={styles.manText}>{item.CategoryName}</Text>
                             </ImageBackground>
@@ -24,7 +24,7 @@ export default LeftCategory = (props) => {
                                 <View style={styles.itemStyle}>
 
                                     {item.SubCategory.map(sub => (
-                                        <TouchableOpacity onPress={() => alert(sub.label)}>
+                                        <TouchableOpacity onPress={() => ToastAndroid.show(sub.label, ToastAndroid.BOTTOM)}>
                                             <Text style={styles.textdecor}>{sub.label}</Text>
                                         </TouchableOpacity>
                                     ))}
@@ -40,7 +40,7 @@ export default LeftCategory = (props) => {
                             <View style={styles.itemWrapper}>
                                 <View style={styles.itemStyle}>
                                     {item.SubCategory.map(sub => (
-                                        <TouchableOpacity onPress={() => alert(sub.label)}>
+                                        <TouchableOpacity onPress={() => ToastAndroid.show(sub.label, ToastAndroid.BOTTOM)}>
                                             <Text style={styles.textdecor}>{sub.label}</Text>
                                         </TouchableOpacity>
                                     ))}
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     },
     imageTag: {
         // backgroundColor: 'pink',
-       
+
     },
     shoeStyle: {
         height: 50,
@@ -102,11 +102,11 @@ const styles = StyleSheet.create({
     },
     rightWrapper: {
         backgroundColor: 'white',
-        width: 195,
+        width: '50%'
     },
     itemWrapper: {
         backgroundColor: 'white',
-        marginHorizontal:10
+        marginHorizontal: 10
 
     },
     itemStyle: {
