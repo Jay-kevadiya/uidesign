@@ -14,19 +14,19 @@ export const CartData = [
   {
     id: '3',
     image: require('../assets/image/product3.jpg'),
-    itemName: 'Foldable  Fruit Vegetable',
+    itemName: 'Foldable Silicone Colander Fruit Vegetable',
     price: '63.98',
   },
   {
     id: '4',
     image: require('../assets/image/product4.jpg'),
-    itemName: 'Foldable Fruit Vegetable',
+    itemName: 'Foldable Silicone Colander Fruit Vegetable',
     price: '63.98',
   },
   {
     id: '5',
     image: require('../assets/image/product5.jpg'),
-    itemName: 'Foldable  Fruit Vegetable',
+    itemName: 'Foldable Silicone Colander Fruit Vegetable',
     price: '63.98',
   },
 ];
