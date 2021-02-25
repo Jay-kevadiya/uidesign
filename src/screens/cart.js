@@ -122,10 +122,10 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     imageTag: {
-
+        width:'25%'
     },
     textTag: {
-        marginLeft: 30
+        width:'65%'
     },
     plantText: {
         color: '#009db0',
@@ -135,9 +135,10 @@ const styles = StyleSheet.create({
     buttonWrapper: {
         alignItems: 'center',
         justifyContent: 'space-around',
+        width:'10%'
     },
     bottomWrapper: {
-        paddingVertical: 10
+        // padding: 10
     },
     subtotalWrapper: {
         flexDirection: 'row',
@@ -152,7 +153,7 @@ const styles = StyleSheet.create({
         paddingVertical: 5
     },
     btnWrapper: {
-
+        padding:10
     },
     checkoutStyle: {
         backgroundColor: '#009db0',

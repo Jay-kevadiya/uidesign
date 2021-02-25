@@ -23,11 +23,13 @@ export default LeftCategory = (props) => {
                             <View style={styles.itemWrapper}>
                                 <View style={styles.itemStyle}>
 
-                                    {item.SubCategory.map(sub => (
-                                        <TouchableOpacity onPress={() => ToastAndroid.show(sub.label, ToastAndroid.BOTTOM)}>
-                                            <Text style={styles.textdecor}>{sub.label}</Text>
-                                        </TouchableOpacity>
-                                    ))}
+                                    {item.SubCategory.map((sub, index) => {
+                                    return (
+                                        <TouchableOpacity key={index} onPress={() => ToastAndroid.show(sub.label, ToastAndroid.BOTTOM)}>
+                                        <Text style={styles.textdecor}>{sub.label}</Text>
+                                    </TouchableOpacity>
+                                    );
+                                    })}
                                 </View>
 
                             </View>
@@ -39,11 +41,13 @@ export default LeftCategory = (props) => {
                         <View style={styles.rightWrapper}>
                             <View style={styles.itemWrapper}>
                                 <View style={styles.itemStyle}>
-                                    {item.SubCategory.map(sub => (
-                                        <TouchableOpacity onPress={() => ToastAndroid.show(sub.label, ToastAndroid.BOTTOM)}>
-                                            <Text style={styles.textdecor}>{sub.label}</Text>
-                                        </TouchableOpacity>
-                                    ))}
+                                    {item.SubCategory.map((sub, index) => {
+                                        return (
+                                            <TouchableOpacity key={index} onPress={() => ToastAndroid.show(sub.label, ToastAndroid.BOTTOM)}>
+                                                <Text style={styles.textdecor}>{sub.label}</Text>
+                                            </TouchableOpacity>
+                                        );
+                                    })}
 
                                 </View>
 

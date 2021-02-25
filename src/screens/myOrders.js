@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, FlatList } from 'react-native';
+import { View, Text, StyleSheet, Image, FlatList, TouchableOpacity} from 'react-native';
 import myOrderData from '../common/myOrder';
 
 export default MyOrders = () => {
@@ -8,9 +8,12 @@ export default MyOrders = () => {
 
         return (
             <>
+             
                 <View style={styles.orderIdWrapper}>
                     <Text style={styles.orderText}>Order Id: {item.orderid}</Text>
                 </View>
+
+                <TouchableOpacity>
 
                 <View style={styles.mainTextWrapper}>
                     <View style={styles.imageWrapper}>
@@ -35,6 +38,8 @@ export default MyOrders = () => {
 
                     </View>
                 </View>
+                </TouchableOpacity>
+                
             </>
         )
     };
@@ -70,10 +75,11 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         flexDirection: 'row',
         alignItems: 'center',
-        padding: 10
+        padding: 20
     },
     imageWrapper: {
-        paddingVertical: 10
+        paddingVertical: 10,
+        width:'20%'
     },
     imageStyle: {
         height: 70,
@@ -83,6 +89,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         // alignItems: 'center',
         justifyContent: 'space-between',
+        width:'80%'
 
 
     },
@@ -90,7 +97,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         // alignItems: 'center',
         justifyContent: 'space-between',
-        width: '78%',
         paddingLeft: 20,
         paddingTop: 10
     },
