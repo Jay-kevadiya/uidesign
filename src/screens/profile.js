@@ -45,7 +45,7 @@ export default Profile = (props) => {
                             <Icon name="print-outline" size={30} color="rgb(84,137,147)" />
                             <Text style={styles.orderText}>My Orders</Text>
                         </View>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => props.navigation.navigate('MyOrders')}>
                             <View style={styles.Viewall}>
                                 <Text style={styles.viewText}>View all</Text>
                             </View>

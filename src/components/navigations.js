@@ -126,7 +126,7 @@ const BottomNav = () => {
         // You can return any component that you like here!
         return <Icon name={iconName} size={size} color={color} />;
       },
-      tabBarLabel: navigation.isFocused() ? route.name : ''
+      tabBarLabel: navigation.isFocused() ? route.name : '',
     })}
     tabBarOptions={{
       activeTintColor: 'rgb(14,87,97)',

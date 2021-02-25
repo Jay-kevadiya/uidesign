@@ -2,17 +2,14 @@ import React, { Component } from 'react';
 import { View, StyleSheet, Text, FlatList } from 'react-native';
 import ImageSlider from 'react-native-image-slider';
 
-
-
-
 export default Slider = (props) => {
     return (
         <View style={styles.slider}>
-                <ImageSlider style={{ borderRadius: 10 }}
+                <ImageSlider 
                     autoPlayWithInterval={1000}
                     loopBothSides
                     images={props.imagedata}
-                    style={{backgroundColor:'white'}}
+                    style={{borderRadius: 10,backgroundColor:'white'}}
 
                 /> 
         </View>
@@ -24,6 +21,7 @@ export default Slider = (props) => {
 const styles = StyleSheet.create({
     slider: {
         width: '100%',
-        height: 170,
+        height: 180,
+        paddingHorizontal:10
     }
 });

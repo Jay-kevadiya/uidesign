@@ -10,7 +10,7 @@ import RightSlider from '../components/rightSlider';
 
 
 export default Home = (props) => {
-    const [showSideBar, setShowSideBar] = useState(false);
+    // const [showSideBar, setShowSideBar] = useState(false);
 
 
     return (
@@ -18,8 +18,8 @@ export default Home = (props) => {
         <View style={styles.container}>
           
             {/* Home Header */}
-            <HomeHeader {...props} name="Home" />
-            <Search onPressFilterButton={() => props.navigation.navigate('RightSlider')}/>
+            <HomeHeader {...props} name="Home"  />
+            <Search onPressFilterButton={ () => props.navigation.navigate('RightSlider')}/>
             <ScrollView showsVerticalScrollIndicator={false}>
 
                 {/* Slider */}
