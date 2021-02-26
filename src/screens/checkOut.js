@@ -52,7 +52,7 @@ export default CheckOut = () => {
                     <View style={styles.paymentWrapper}>
                         <View style={styles.paymentBack}>
                             <FontAwesome name="apple" size={30} color="white" />
-                            <Text style={{ fontFamily: 'Roboto-Bold', fontSize: 15, color: 'black', marginLeft: 20 }}>PAYPAL</Text>
+                            <Text style={{ fontFamily: 'Roboto-Bold', fontSize: 15, color: 'black', marginLeft: 20 }}>APPLE</Text>
                         </View>
                     </View>
                 </TouchableOpacity>
