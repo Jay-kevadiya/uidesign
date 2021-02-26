@@ -1,7 +1,10 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 
+
 export default TrackingOrder = (props) => {
+
+    
     const { item } = props.route.params;
     return (
         <View style={styles.container}>
@@ -33,7 +36,6 @@ export default TrackingOrder = (props) => {
                 </View>
             </View>
 
-            
         </View>
     )
 };

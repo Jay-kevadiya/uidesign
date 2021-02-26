@@ -23,7 +23,7 @@ export default HomeHeader = (props) => {
                         <Image style={styles.cartImage} source={require('../assets/icon/trolley.png')} />
                     </TouchableOpacity>
 
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => props.navigation.navigate('Chat')}>
                         <Image style={styles.chatImage} source={require('../assets/icon/chat.png')} />
                     </TouchableOpacity>
                 </View>

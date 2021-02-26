@@ -51,7 +51,7 @@ export default CheckOut = () => {
                 <TouchableOpacity>
                     <View style={styles.paymentWrapper}>
                         <View style={styles.paymentBack}>
-                            <FontAwesome name="apple" size={30} color="white" />
+                            <FontAwesome name="apple" size={30} color="black" />
                             <Text style={{ fontFamily: 'Roboto-Bold', fontSize: 15, color: 'black', marginLeft: 20 }}>APPLE</Text>
                         </View>
                     </View>

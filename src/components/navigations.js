@@ -20,6 +20,7 @@ import Notifications from '../screens/notifications';
 import MyOrders from '../screens/myOrders';
 import Favourite from '../screens/favourite';
 import TrackingOrder from '../screens/trackingOrder';
+import Chat from '../screens/chat';
 
 
 
@@ -54,6 +55,7 @@ const StackNav = () => {
       <Stack.Screen name="MyOrders" component={MyOrders}/>
       <Stack.Screen name="Favourite" component={Favourite} />
       <Stack.Screen name="TrackingOrder" component={TrackingOrder} />
+      <Stack.Screen name="Chat" component={Chat} />
       
     </Stack.Navigator>
   )
