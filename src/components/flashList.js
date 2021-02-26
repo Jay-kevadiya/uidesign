@@ -45,12 +45,16 @@ export default FlashList = (props) => {
     return (
         <View style={styles.container}>
             {/* Flash sales */}
-            <View style={styles.flashWrapper}>
+             
+                <View style={styles.flashWrapper}>
                 <View style={styles.iconWrapper}>
                     <Icon name="megaphone-outline" size={25} color="rgb(96,144,161)" />
                     <Text style={styles.textStyle}>{props.titlename}</Text>
                 </View>
             </View>
+          
+            
+           
 
            
 
@@ -63,9 +67,10 @@ export default FlashList = (props) => {
                     <FlatList
                         data={flashSaleData}
                         keyExtractor={item => item.id}
-                        horizontal={true}
+                         horizontal={props.horizontaltype}
                         renderItem={renderFlashListItem}
                         showsHorizontalScrollIndicator={false}
+                        numColumns={props.lines}
                     />
                 </View>
             </View>

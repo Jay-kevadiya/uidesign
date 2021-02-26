@@ -29,7 +29,7 @@ export default DrawerSectionTwo = (props) => {
                     </View>
                 </TouchableOpacity>
 
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => props.navigation.navigate('Favourite')}>
                     <View style={styles.homeWrapper}>
                         <Icon name="heart-outline" size={25} color="rgb(14,87,97)" />
                         <Text style={styles.homeText}>Wish List</Text>

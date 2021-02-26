@@ -18,6 +18,7 @@ import Cart from '../screens/cart';
 import CheckOut from '../screens/checkOut';
 import Notifications from '../screens/notifications';
 import MyOrders from '../screens/myOrders';
+import Favourite from '../screens/favourite';
 
 
 
@@ -50,6 +51,7 @@ const StackNav = () => {
       <Stack.Screen name="CheckOut" component={CheckOut}/>
       <Stack.Screen name="Notifications" component={Notifications}/>
       <Stack.Screen name="MyOrders" component={MyOrders}/>
+      <Stack.Screen name="Favourite" component={Favourite} />
 
       
     </Stack.Navigator>

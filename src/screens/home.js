@@ -25,7 +25,7 @@ export default Home = (props) => {
                 {/* Slider */}
                <Slider imagedata={promoImages} />
 
-                <FlashList {...props} titlename="Flash Sales"/>
+                <FlashList {...props} titlename="Flash Sales" horizontaltype={true} lines={1}/>
 
                 <TrendingList />
 

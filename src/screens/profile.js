@@ -24,7 +24,7 @@ export default Profile = (props) => {
                     </View>
 
                     <View style={styles.favouriteWrapper}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => props.navigation.navigate('Favourite')}>
                             <View style={styles.favouritetag}>
                                 <Icon name="heart-outline" size={30} color="rgb(84,137,147)" />
                                 <Text style={styles.favText}>Favourite</Text>
