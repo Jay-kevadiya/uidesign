@@ -24,6 +24,45 @@ export const productImages = [
   require('../assets/image/productBanner5.png'),
 ];
 
+export const OrderData = [
+
+  {
+    id:'1',
+    name:'Order Received',
+    active:'#009db0',
+    inactive:'grey',
+    status:'true'
+  },
+  {
+    id:'2',
+    name:'Preparing',
+    active:'#009db0',
+    inactive:'grey',
+    status:'false'
+  },
+  {
+    id:'3',
+    name:'Ready',
+    active:'#009db0',
+    inactive:'grey',
+    status:'false'
+  },
+  {
+    id:'4',
+    name:'On The Way',
+    active:'#009db0',
+    inactive:'grey',
+    status:'false'
+  },
+  {
+    id:'5',
+    name:'Delivered',
+    active:'#009db0',
+    inactive:'grey',
+    status:'false'
+  }
+];
+
 export const ColorData = [
   {
     id: '1',

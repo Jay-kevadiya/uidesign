@@ -1,11 +1,32 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image, FlatList } from 'react-native';
+import { Rating, AirbnbRating } from 'react-native-ratings';
+import { OrderData } from '../common/data';
 
 
 export default TrackingOrder = (props) => {
 
-    
+    const STAR_IMAGE = require('../assets/image/STAR.png')
+
     const { item } = props.route.params;
+
+    const renderProcessList = ({ item }) => {
+        return (
+            <View style={styles.mainContainer}>
+                <View style={styles.processWrapper}>
+                    <Text style={{ backgroundColor: item.status === 'true' ? item.active : item.inactive, width: 25, height: 25, padding: 10, borderRadius: 20 }}></Text>
+                    <Text style={[styles.textName, { color: item.status === 'true' ? '#009db0' : 'lightblue' }]}>{item.name}</Text>
+                </View>
+                {item.id === '5' ?
+                    <></>
+                    :
+                    <View style={{ paddingVertical: 5 }}>
+                        <View style={{ borderColor: item.status === 'true' ? '#009db0' : 'gery', borderWidth: 1, width: 1, height: 50, marginLeft: 30 }}></View>
+                    </View>
+                }
+            </View>
+        )
+    };
     return (
         <View style={styles.container}>
             <View>
@@ -36,6 +57,28 @@ export default TrackingOrder = (props) => {
                 </View>
             </View>
 
+            <View style={{ flex: 1 }}>
+                <FlatList
+                    data={OrderData}
+                    keyExtractor={item => item.id}
+                    renderItem={renderProcessList}
+                    numColumns={1}
+                />
+            </View>
+
+            <View style={styles.footerWrapper}>
+                <View style={styles.rateText}>
+                    <Text style={styles.textRate1}>How would you rate this store?</Text>
+                    <Text style={styles.textRate2}>Click on the stars below to leave comments</Text>
+                </View>
+
+                <Rating
+                    type='star'
+                    ratingCount={5}
+                    imageSize={50}
+                />
+
+            </View>
         </View>
     )
 };
@@ -97,6 +140,41 @@ const styles = StyleSheet.create({
         fontFamily: 'Roboto-Bold',
         fontSize: 18,
         color: '#009db0',
+
+    },
+    processWrapper: {
+        paddingHorizontal: 20,
+        flexDirection: 'row',
+        alignItems: 'center',
+
+    },
+    mainContainer: {
+        padding: 10,
+        marginBottom: 20
+    },
+    textName: {
+        fontFamily: 'Roboto-Bold',
+        paddingHorizontal: 20,
+        fontSize: 18,
+    },
+    footerWrapper: {
+        backgroundColor: 'white',
+        padding: 10,
+    },
+    rateText: {
+        flexDirection: 'column',
+        alignItems: 'center',
+        paddingVertical: 10
+    },
+    textRate1: {
+        fontFamily: 'Roboto-Bold',
+        fontSize: 18,
+        color: '#009db0'
+    },
+    textRate2: {
+        fontFamily: 'Roboto-Medium',
+        fontSize: 15,
+        color: 'black'
 
     }
 });
