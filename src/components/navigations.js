@@ -43,7 +43,7 @@ export default Navigations = () => {
 
 const StackNav = () => {
   return (
-    <Stack.Navigator >
+    <Stack.Navigator>
       <Stack.Screen name="Home Menu" component={BottomNav} options={{ headerShown: false }} />
       <Stack.Screen name="Home" component={Home}/>
       <Stack.Screen name="ProductScreen" component={ProductScreen} />
