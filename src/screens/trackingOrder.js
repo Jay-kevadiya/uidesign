@@ -14,16 +14,19 @@ export default TrackingOrder = (props) => {
         return (
             <View style={styles.mainContainer}>
                 <View style={styles.processWrapper}>
-                    <Text style={{ backgroundColor: item.status === 'true' ? item.active : item.inactive, width: 25, height: 25, padding: 10, borderRadius: 20 }}></Text>
+                    <Text style={[styles.trackingText, { backgroundColor: item.status === 'true' ? item.active : item.inactive }]}></Text>
                     <Text style={[styles.textName, { color: item.status === 'true' ? '#009db0' : 'lightblue' }]}>{item.name}</Text>
                 </View>
-                {item.id === '5' ?
+                {item.id == '5'?
                     <></>
                     :
-                    <View style={{ paddingVertical: 5 }}>
-                        <View style={{ borderColor: item.status === 'true' ? '#009db0' : 'gery', borderWidth: 1, width: 1, height: 50, marginLeft: 30 }}></View>
+                    <View>
+                        <View style={[styles.lineStyle, { borderColor: item.status === 'true' ? '#009db0' : 'gery'}]}></View>
                     </View>
                 }
+
+                
+
             </View>
         )
     };
@@ -48,7 +51,7 @@ export default TrackingOrder = (props) => {
                         </View>
                         <View style={styles.Wrapper2}>
                             <Text style={styles.textStyle}>$ {item.price}</Text>
-                            <View style={{ borderColor: 'black', borderWidth: 1, borderRadius: 20, paddingHorizontal: 5 }}>
+                            <View style={styles.timeWrapper}>
                                 <Text style={[styles.textStyle, { fontSize: 18, color: 'black' }]}>$X{item.qty}</Text>
                             </View>
                             <Text style={styles.textStyle}>{item.time}</Text>
@@ -149,7 +152,7 @@ const styles = StyleSheet.create({
 
     },
     mainContainer: {
-        padding: 10,
+        paddingHorizontal: 20,
         marginBottom: 20
     },
     textName: {
@@ -176,5 +179,24 @@ const styles = StyleSheet.create({
         fontSize: 15,
         color: 'black'
 
+    },
+    trackingText: {
+        width: 25,
+        height: 25,
+        padding: 10,
+        borderRadius: 20
+    },
+    lineStyle: {
+        borderWidth: 1,
+        width: 1,
+        height: 40,
+        marginLeft: 30,
+        marginTop: 10
+    },
+    timeWrapper: {
+        borderColor: 'black',
+        borderWidth: 1,
+        borderRadius: 20,
+        paddingHorizontal: 5
     }
 });

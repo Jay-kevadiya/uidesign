@@ -21,20 +21,20 @@ export default CheckOut = () => {
             <View style={styles.visaWrapper}>
                 <View style={styles.visabackWrapper}>
                     <View style={styles.TextContainer}>
-                        <Text style={{ color: 'purple', fontSize: 20, fontFamily: 'Roboto-Bold' }}>VISA</Text>
+                        <Text style={styles.visaStyle}>VISA</Text>
                         <View style={styles.cardWrapper}>
-                            <Text style={{ color: 'green', fontFamily: 'Roboto-Medium', fontSize: 15 }}>CARD NUMBER</Text>
-                            <Text style={{ color: 'green', fontFamily: 'Roboto-Bold', fontSize: 18 }}>8154 3265 0045 1582</Text>
+                            <Text style={styles.cardStyle}>CARD NUMBER</Text>
+                            <Text style={styles.numberStyle}>8154 3265 0045 1582</Text>
                         </View>
 
                         <View style={styles.expdate}>
-                            <Text style={{ color: 'green', fontFamily: 'Roboto-Medium', fontSize: 15 }}>EXPIRY DATE</Text>
-                            <Text style={{ color: 'green', fontFamily: 'Roboto-Medium', fontSize: 15 }}>CVV</Text>
+                            <Text style={styles.expdateStyle}>EXPIRY DATE</Text>
+                            <Text style={styles.cvvStyle}>CVV</Text>
                         </View>
 
-                        <View style={[styles.expdate, { marginTop: 10 }]}>
-                            <Text style={{ color: 'green', fontFamily: 'Roboto-Bold', fontSize: 18 }}>07/21</Text>
-                            <Text style={{ color: 'green', fontFamily: 'Roboto-Bold', fontSize: 18 }}>007</Text>
+                        <View style={styles.expdate}>
+                            <Text style={styles.dateStyle}>07/21</Text>
+                            <Text style={styles.dateStyle}>007</Text>
                         </View>
                     </View>
                 </View>
@@ -44,7 +44,7 @@ export default CheckOut = () => {
                     <View style={styles.paymentWrapper}>
                         <View style={styles.paymentBack}>
                             <FontAwesome name="paypal" size={30} color="blue" />
-                            <Text style={{ fontFamily: 'Roboto-Bold', fontSize: 15, color: 'black', marginLeft: 20 }}>PAYPAL</Text>
+                            <Text style={styles.logoStyle}>PAYPAL</Text>
                         </View>
                     </View>
                 </TouchableOpacity>
@@ -52,7 +52,7 @@ export default CheckOut = () => {
                     <View style={styles.paymentWrapper}>
                         <View style={styles.paymentBack}>
                             <FontAwesome name="apple" size={30} color="black" />
-                            <Text style={{ fontFamily: 'Roboto-Bold', fontSize: 15, color: 'black', marginLeft: 20 }}>APPLE</Text>
+                            <Text style={styles.logoStyle}>APPLE</Text>
                         </View>
                     </View>
                 </TouchableOpacity>
@@ -128,6 +128,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
+        marginTop: 10
     },
 
     checkText: {
@@ -174,5 +175,41 @@ const styles = StyleSheet.create({
         fontSize: 18,
         color:'white'
 
+    },
+    visaStyle:{
+        color: 'purple', 
+        fontSize: 20, 
+        fontFamily: 'Roboto-Bold' 
+    },
+    cardStyle:{
+        color: 'green', 
+        fontFamily: 'Roboto-Medium', 
+        fontSize: 15 
+    },
+    numberStyle:{
+        color: 'green', 
+        fontFamily: 'Roboto-Bold', 
+        fontSize: 18
+    },
+    expdateStyle:{
+        color: 'green', 
+        fontFamily: 'Roboto-Medium', 
+        fontSize: 15 
+    },
+    cvvStyle:{
+        color: 'green', 
+        fontFamily: 'Roboto-Medium', 
+        fontSize: 15 
+    },
+    dateStyle:{
+        color: 'green', 
+        fontFamily: 'Roboto-Bold', 
+        fontSize: 18 
+    },
+    logoStyle:{
+        fontFamily: 'Roboto-Bold', 
+        fontSize: 15, 
+        color: 'black', 
+        marginLeft: 20 
     }
 });
