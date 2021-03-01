@@ -17,7 +17,7 @@ export default TrackingOrder = (props) => {
                     <Text style={[styles.trackingText, { backgroundColor: item.status === 'true' ? item.active : item.inactive }]}></Text>
                     <Text style={[styles.textName, { color: item.status === 'true' ? '#009db0' : 'lightblue' }]}>{item.name}</Text>
                 </View>
-                {item.id == '5'?
+                {item.id === '5' ?
                     <></>
                     :
                     <View>
